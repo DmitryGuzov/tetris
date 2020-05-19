@@ -1,0 +1,206 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;    
+    overflow: hidden;
+}
+.wrapper{
+    width: 700px;
+    margin: auto;
+    display: flex;    
+    align-items: center;    
+    padding-top: 10px;
+}
+.interface{
+    border: 10px solid greenyellow;
+    position: relative;    
+    width: 300px;
+    height: 620px;
+    order: 1;
+}
+
+.interface #next-figure{    
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-60%,-50%);
+    border: none;
+    font-size: 0;
+}
+.interface #next-figure div{    
+    border: none;
+}
+.interface .btn{       
+    margin-left: 10px; 
+    margin-top: 20px;
+    width: auto;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    background-color: greenyellow;
+    
+}
+.interface div{
+    padding-top: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+.interface div span {
+    font-size: 40px;
+}
+
+#game{
+    order: 2;    
+    margin: auto;    
+    font-size: 30px;
+    position: relative;    
+}
+.main{    
+    width: 320px;
+    height: 620px;    
+    border: 10px solid greenyellow;
+    font-size: 0;    
+}
+.cell{    
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid green;
+}
+.movingCell {
+    background-color: greenyellow;  
+}
+.fixedCell {
+    background-color: orange;
+    border: 1px solid transparent;
+    border-radius: 0;    
+}
+
+#game-over{
+    display: none;
+    position: absolute;
+    background-color: greenyellow;
+    padding: 15px;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);        
+    font-size: 100px;
+    color: black;
+    text-align: center;   
+}
+#game-over div {
+    font-size: 50px;
+}
+/* Animations set */
+
+.slideDown{
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;  
+ 
+    animation-duration: 0.5s; 
+    -webkit-animation-duration: 0.5s;
+ 
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out; 
+}
+.slideUp{
+    animation-name: slideUp;
+    -webkit-animation-name: slideUp;  
+ 
+    animation-duration: 0.5s; 
+    -webkit-animation-duration: 0.5s;
+ 
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;     
+}
+.scaleDownPause{
+    animation-name: scaleDownPause;
+    -webkit-animation-name: scaleDownPause;  
+ 
+    animation-duration: 0.4s; 
+    -webkit-animation-duration: 0.4s;
+ 
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out; 
+}
+.scaleUpPause{
+    animation-name: scaleUpPause;
+    -webkit-animation-name: scaleUpPause;  
+ 
+    animation-duration: 0.4s; 
+    -webkit-animation-duration: 0.4s;
+ 
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;     
+}
+.overEffect{
+    animation-name: overEffect;
+    -webkit-animation-name: overEffect;  
+ 
+    animation-duration: 1.3s; 
+    -webkit-animation-duration: 1.3s;
+ 
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;  
+}
+.startEffect{
+    animation-name: startEffect;
+    -webkit-animation-name: startEffect;  
+ 
+    animation-duration: 1.3s; 
+    -webkit-animation-duration: 1.3s;
+ 
+    animation-timing-function: ease-in-out;    
+    -webkit-animation-timing-function: ease-in-out;  
+}
+@keyframes overEffect{
+    0%{ transform: translate(-500%,0); opacity: 0;}
+    100%{ transform: translate(0,0); opacity: 1;}
+}
+@keyframes startEffect{
+    0%{ transform: translate(0,0); opacity: 1;}
+    100%{ transform: translate(-500%,0); opacity: 0;}
+}
+@keyframes scaleDownPause {
+    0% {        
+        transform: translate(-50%,-50%) scale(0);
+    }             
+    100% {
+        transform: translate(-50%,-50%) scale(1);
+    }       
+}
+@keyframes scaleUpPause {
+    0% {
+        transform: translate(-50%,-50%) scale(1);
+    }             
+    100% {
+        transform: translate(-50%,-50%) scale(0);
+        
+    }       
+}
+@keyframes slideDown {
+    0% {
+        
+        transform: translate(-50%,-250%);
+    }             
+    100% {
+        transform: translate(-50%,-50%);
+    }       
+}
+@keyframes slideUp {
+    0% {
+        transform: translate(-50%,-50%);
+    }             
+    100% {
+        transform: translate(-50%,200%);
+        
+    }       
+}
